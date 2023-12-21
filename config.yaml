@@ -1,0 +1,34 @@
+---
+test:
+  load:
+    begin_step: 1
+    end_step: 10
+    steps: 1
+  gaze360:
+    image: "/home/lrc/gaze_datasets/Gaze360/Image"
+    label: "/home/lrc/gaze_datasets/Gaze360/Label"
+  eth-mv:
+    image: "/home/lrc/gaze_datasets/eth100k/Image"
+    label: "/home/lrc/gaze_datasets/eth100k/Label_test"
+  eth-mv-train:
+    image: "/home/lrc/gaze_datasets/eth100k/Image"
+    label: "/home/lrc/gaze_datasets/eth100k/Label_train"
+dual:
+  params:
+    epoch: 10
+    decay: 1
+    decay_step: 2
+  save:
+    step: 1
+  gaze360:
+    image: "/home/lrc/gaze_datasets/Gaze360/Image"
+    label: "/home/lrc/gaze_datasets/Gaze360/Label"
+  eth-mv:
+    image: "/home/lrc/gaze_datasets/eth100k/Image"
+    label: "/home/lrc/gaze_datasets/eth100k/Label_test"
+  eth-mv-train:
+    image: "/home/lrc/gaze_datasets/eth100k/Image"
+    label: "/home/lrc/gaze_datasets/eth100k/Label_train"
+  pretrain_gaze360: "/home/lrc/cvpr23/Gaze3d/tune/gaze360_eth2/checkpoint/Iter_20_GA.pt"
+  pretrain_eth-mv-train: "/home/lrc/cvpr23/Gaze3d/eth100k_exp/checkpoint/Iter_10_GA.pt"
+
