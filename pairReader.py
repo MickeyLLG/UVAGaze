@@ -62,6 +62,7 @@ class loader(Dataset):
         gaze3d_1 = line_1[4]
         head3d_1 = line_1[5]
         face_1 = line_1[0]
+        R_mat_1 = line_1[6]
 
         label_1 = np.array(gaze3d_1.split(",")).astype("float")
         label_1 = torch.from_numpy(label_1).type(torch.FloatTensor)
@@ -69,13 +70,16 @@ class loader(Dataset):
         headpose_1 = np.array(head3d_1.split(",")).astype("float")
         headpose_1 = torch.from_numpy(headpose_1).type(torch.FloatTensor)
 
+        rmat_1 = np.array(R_mat_1.split(",")).astype("float")
+        rmat_1 = torch.from_numpy(rmat_1).type(torch.FloatTensor)
+
         # print(self.root/name/ face)
         fimg_1 = cv2.imread(str(self.root / face_1))
         fimg_1 = cv2.resize(fimg_1, (448, 448)) / 255.0
         fimg_1 = fimg_1.transpose(2, 0, 1)
 
         data_1 = {"face": torch.from_numpy(fimg_1).type(torch.FloatTensor),
-                  "head_pose": headpose_1,
+                  "head_pose": headpose_1, "R_mat": rmat_1,
                   "name": name_1}
 
         line_2 = self.lines[line_idx_2]
@@ -86,6 +90,7 @@ class loader(Dataset):
         gaze3d_2 = line_2[4]
         head3d_2 = line_2[5]
         face_2 = line_2[0]
+        R_mat_2 = line_2[6]
 
         label_2 = np.array(gaze3d_2.split(",")).astype("float")
         label_2 = torch.from_numpy(label_2).type(torch.FloatTensor)
@@ -93,15 +98,17 @@ class loader(Dataset):
         headpose_2 = np.array(head3d_2.split(",")).astype("float")
         headpose_2 = torch.from_numpy(headpose_2).type(torch.FloatTensor)
 
+        rmat_2 = np.array(R_mat_2.split(",")).astype("float")
+        rmat_2 = torch.from_numpy(rmat_2).type(torch.FloatTensor)
+
         # print(self.root/name/ face)
         fimg_2 = cv2.imread(str(self.root / face_2))
         fimg_2 = cv2.resize(fimg_2, (448, 448)) / 255.0
         fimg_2 = fimg_2.transpose(2, 0, 1)
 
         data_2 = {"face": torch.from_numpy(fimg_2).type(torch.FloatTensor),
-                  "head_pose": headpose_2,
+                  "head_pose": headpose_2, "R_mat": rmat_2,
                   "name": name_2}
-        # print(face_1, face_2)
 
         return data_1, label_1, data_2, label_2
 

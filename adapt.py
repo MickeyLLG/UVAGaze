@@ -177,6 +177,7 @@ if __name__ == "__main__":
                 face2 = data2['face'].to(device)
                 face_source = data_source['face'].to(device)
                 label_source = label_source.to(device)
+                R_mat1, R_mat2 = data1['R_mat'].to(device), data2['R_mat'].to(device)
 
                 # update rec
                 gaze1, hp1 = net(face1)
