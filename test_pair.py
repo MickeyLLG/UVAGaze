@@ -36,7 +36,7 @@ def angular(gaze, label):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Domain Adaptation')
     parser.add_argument('--i', type=int, default=-1,
-                        help="i represents the i-th folder used as the test set")
+                        help="i represents the i-th folder used as the test set, usually -1 to use all folders")
     parser.add_argument('--savepath', type=str, default=None, help="path to save models")
     parser.add_argument('--gpu', type=int, default=0, help="gpu")
     parser.add_argument('--target', type=str, default='mpii', help="target dataset, mpii/edp")
