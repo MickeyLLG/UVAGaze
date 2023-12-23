@@ -70,7 +70,7 @@ class loader(Dataset):
         headpose_1 = np.array(head3d_1.split(",")).astype("float")
         headpose_1 = torch.from_numpy(headpose_1).type(torch.FloatTensor)
 
-        rmat_1 = np.array(R_mat_1.split(",")).astype("float")
+        rmat_1 = np.array(R_mat_1.split(",")).astype("float").reshape(3, 3)
         rmat_1 = torch.from_numpy(rmat_1).type(torch.FloatTensor)
 
         # print(self.root/name/ face)
@@ -98,7 +98,7 @@ class loader(Dataset):
         headpose_2 = np.array(head3d_2.split(",")).astype("float")
         headpose_2 = torch.from_numpy(headpose_2).type(torch.FloatTensor)
 
-        rmat_2 = np.array(R_mat_2.split(",")).astype("float")
+        rmat_2 = np.array(R_mat_2.split(",")).astype("float").reshape(3, 3)
         rmat_2 = torch.from_numpy(rmat_2).type(torch.FloatTensor)
 
         # print(self.root/name/ face)
@@ -109,6 +109,7 @@ class loader(Dataset):
         data_2 = {"face": torch.from_numpy(fimg_2).type(torch.FloatTensor),
                   "head_pose": headpose_2, "R_mat": rmat_2,
                   "name": name_2}
+        # print(rmat_1.T @ rmat_1, rmat_2 @ rmat_2.T)
 
         return data_1, label_1, data_2, label_2
 

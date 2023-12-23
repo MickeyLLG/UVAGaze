@@ -150,7 +150,8 @@ if __name__ == "__main__":
 
     gaze_loss_op = model.AngularLoss()
     hp_loss_op = nn.L1Loss().cuda()
-    stb_term_op = model.StableLossTerm()
+    # stb_term_op = model.StableLossTerm() # stable loss without using R_mat, actually no big difference.
+    stb_term_op = model.StableLossTerm_w_Rmat()
     base_lr = args.lr
 
     decaysteps = config["params"]["decay_step"]
@@ -177,7 +178,8 @@ if __name__ == "__main__":
                 face2 = data2['face'].to(device)
                 face_source = data_source['face'].to(device)
                 label_source = label_source.to(device)
-                R_mat1, R_mat2 = data1['R_mat'].to(device), data2['R_mat'].to(device)
+                # R_mat from normalization step, used to calculate C.
+                R_mat1, R_mat2 = data1['R_mat'].to(device), data2['R_mat'].to(device)  # (B, 3, 3)
 
                 # update rec
                 gaze1, hp1 = net(face1)
@@ -193,7 +195,8 @@ if __name__ == "__main__":
                 infront = infront.reshape(bs, 1).repeat(1, 3)
                 pseudo = torch.where(infront, gaze1_hcs, gaze2_hcs).detach()
 
-                cam_rots = stb_term_op(hp1, hp2)
+                # cam_rots = stb_term_op(hp1, hp2) # stable loss without using R_mat, actually no big difference.
+                cam_rots = stb_term_op(hp1, hp2, R_mat1, R_mat2)
 
                 # loss calculation
                 if cam_relative is None:

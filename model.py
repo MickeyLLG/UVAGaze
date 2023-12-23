@@ -72,3 +72,23 @@ class StableLossTerm():
         it2 = torch.cos(hp1[:, 1]) * torch.sin(hp1[:, 0]) * torch.cos(hp2[:, 1]) * torch.sin(hp2[:, 0])
         it3 = torch.cos(hp1[:, 1]) * torch.cos(hp1[:, 0]) * torch.cos(hp2[:, 1]) * torch.cos(hp2[:, 0])
         return torch.mean(it1 + it2 + it3)
+
+
+class StableLossTerm_w_Rmat():
+    def __init__(self):
+        pass
+
+    def __call__(self, hp1, hp2, R_mat1, R_mat2):
+        column3_1 = torch.cat((torch.sin(hp1[:, 1]).reshape(-1, 1),
+                               (torch.cos(hp1[:, 1]) * torch.sin(hp1[:, 0])).reshape(-1, 1),
+                               (torch.cos(hp1[:, 1]) * torch.cos(hp1[:, 0])).reshape(-1, 1)), 1)
+        column3_2 = torch.cat((torch.sin(hp2[:, 1]).reshape(-1, 1),
+                               (torch.cos(hp2[:, 1]) * torch.sin(hp2[:, 0])).reshape(-1, 1),
+                               (torch.cos(hp2[:, 1]) * torch.cos(hp2[:, 0])).reshape(-1, 1)), 1)
+        # print(column3_2.shape, column3_1.shape)
+        col3_1 = torch.bmm(R_mat1.permute(0, 2, 1), column3_1.reshape(-1, 3, 1))
+        col3_2 = torch.bmm(R_mat2.permute(0, 2, 1), column3_2.reshape(-1, 3, 1))
+
+        # print(col3_1.shape, col3_2.shape)
+
+        return torch.mean(col3_1 * col3_2)

@@ -173,7 +173,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     baselog = f'pretrain/{20 if args.source == "gaze360" else 10}.log'
-    # baselog = f'/home/lrc/cvpr23/Gaze3d/eth100k_exp/evaluation/cross-eth100k/10.log'
     print('------\nbase pair', end=': ')
     calc_metric_2cam3d(baselog, cams=18, pairID=args.pairID)
     for i in range(1, 11, 1):
