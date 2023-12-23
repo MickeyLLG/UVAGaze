@@ -94,7 +94,7 @@ We provide two optional arguments, `--stb` and `--pre`. They repersent two diffe
 
 We also provide other arguments for adjusting the hyperparameters in our UVAGaze architecture, which could be found in our paper.
 
-For example, you can run the code like:
+For example, run code like:
 
 ```bash
 python3 adapt.py --i -1 --cams 18 --pic 256 --bs 32  --pairID 0 --savepath eth2eth --source eth-mv100k-train --target eth-mv100k --gpu 0 --stb --pre
@@ -104,7 +104,7 @@ python3 adapt.py --i -1 --cams 18 --pic 256 --bs 32  --pairID 0 --savepath eth2e
 
 `--i, --savepath, --target, --pairID` are the same as training.
 
-For example, you can run the code like:
+For example, run code like:
 
 ```bash
 python3 test_pair.py --pairID 0 --savepath eth2eth --target eth-mv100k --gpu 0
@@ -122,7 +122,7 @@ Please refer to `run.sh` for a complete procedure from training to testing.
 
 ## Citation
 
-If you find this work or code is helpful in your research, please cite:
+If this work or code is helpful in your research, please cite:
 
 ```latex
 @inproceedings{liu2024uvagaze,
@@ -135,4 +135,4 @@ If you find this work or code is helpful in your research, please cite:
 
 ## Contact
 
-If you have any questions, feel free to E-mail me via: `liuruicong(at)buaa.edu.cn`
+For any questions, feel free to E-mail me via: `liuruicong(at)buaa.edu.cn`
