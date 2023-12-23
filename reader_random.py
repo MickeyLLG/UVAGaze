@@ -96,6 +96,7 @@ def txtload(labelpath, imagepath, batch_size, pic_num=-1, shuffle=True, num_work
     load = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
     return load
 
+
 def seed_everything(seed):
     # random.seed(seed)
     os.environ['PYTHONHASHSEED'] = str(seed)
@@ -104,13 +105,3 @@ def seed_everything(seed):
     torch.cuda.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
-
-if __name__ == "__main__":
-    # seed_everything(1)
-    path = '/home/lrc/gaze_datasets/EyeDiap/Label/p1.label'
-    d, lines = txtload(path, '/home/lrc/gaze_datasets/EyeDiap/Image', batch_size=32, pic_num=5,
-                shuffle=True, num_workers=4, header=True)
-    print(len(d))
-    print(lines[:2])
-    for i, (img, label) in enumerate(d):
-        print(i, label)

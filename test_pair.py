@@ -88,7 +88,6 @@ if __name__ == "__main__":
         net = model.GazeStatic()
         statedict = torch.load(os.path.join(savepath, f"Iter_{saveiter}_{modelname}.pt"), map_location=loc)
         statedict = {k.replace('module.', ''): v for k, v in statedict.items()}
-        # statedict = torch.load(f"/home/lrc/adp_gaze/Iter_6_gaze360.pt", map_location='cuda:1')
 
         net.to(device)
         net.load_state_dict(statedict)

@@ -88,12 +88,3 @@ def txtload(labelpath, imagepath, batch_size, pic_num=-1, shuffle=True, num_work
     # print(dataset.lines[:10])
     load = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
     return load
-
-
-if __name__ == "__main__":
-    path = '/home/lrc/gaze_datasets/EyeDiap/Label/p1.label'
-    d = txtload(path, '/home/lrc/gaze_datasets/EyeDiap/Image', batch_size=32, pic_num=5,
-                shuffle=True, num_workers=4, header=True)
-    print(len(d))
-    for i, (img, label) in enumerate(d):
-        print(i, img)

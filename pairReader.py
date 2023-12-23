@@ -135,14 +135,14 @@ def seed_everything(seed):
 
 if __name__ == "__main__":
     seed_everything(18)
-    path = ['/home/lrc/gaze_datasets/eth100k/Label_test/subject0008.label',
-            '/home/lrc/gaze_datasets/eth100k/Label_test/subject0018.label',
-            '/home/lrc/gaze_datasets/eth100k/Label_test/subject0026.label']
-    d = txtload(path, '/home/lrc/gaze_datasets/eth100k/Image', batch_size=32, pic_num=5,
+    path = ['data/eth-mv/Label_test/subject0008.label',
+            'data/eth-mv/Label_test/subject0018.label',
+            'data/eth-mv/Label_test/subject0026.label']
+    d = txtload(path, 'data/eth-mv/Image', batch_size=32, pic_num=5,
                 shuffle=False, num_workers=4, header=True)
     print(len(d))
     for i, (data1, label1, data2, label2) in enumerate(d):
         print(i, label1, label2)
         print(data1['face'].shape, data2['face'].shape)
-        cv2.imwrite('/home/lrc/aaai22/Dual_Gaze/1.jpg', data1['face'][2].numpy().transpose(1, 2, 0) * 255)
-        cv2.imwrite('/home/lrc/aaai22/Dual_Gaze/2.jpg', data2['face'][2].numpy().transpose(1, 2, 0) * 255)
+        cv2.imwrite('1.jpg', data1['face'][2].numpy().transpose(1, 2, 0) * 255)
+        cv2.imwrite('2.jpg', data2['face'][2].numpy().transpose(1, 2, 0) * 255)
