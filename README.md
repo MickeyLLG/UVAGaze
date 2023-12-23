@@ -84,7 +84,7 @@ ln -s ${DATA_DIR}/Gaze360 data
 
 We provide two optional arguments, `--stb` and `--pre`. They repersent two different network components, which could be found in our paper.
 
-`--source` and `--target` represent the datasets used as the pre-training set and the dataset adapting to. It is recommended to use `gaze360, eth-mv-train` as `--source` and use `eth-mv` as `--target`. Please see `config.yaml` for the dataset configuration.
+`--source` and `--target` represent the datasets used as the pre-training set and the dataset adapting to. It is recommended to use `gaze360, eth-mv[100k]-train` as `--source` and use `eth-mv[100k]` as `--target`. Please see `config.yaml` for the dataset configuration.
 
 `--pairID` represents the index of dual-camera pair to adapt, ranging from 0 to 8.
 
