@@ -137,7 +137,7 @@ if __name__ == "__main__":
                                            shuffle=False, num_workers=4, pic_num=args.pic, header=True)
 
     print("Model building")
-    pre_model = config[f'pretrain_{args.source}']
+    pre_model = config[f'pretrain_{"eth-mv100k-train" if "eth" in args.source else args.source}']
     print('pre-model:', pre_model)
     net = model.GazeStatic()
     net.to(device)

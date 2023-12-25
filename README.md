@@ -117,6 +117,7 @@ We need to run `calc_metric.py` to get three metrics on the pair we adapt to. Th
 ```bash
 python3 calc_metric.py --pairID 0 --savepath eth2eth --source eth-mv100k-train --target eth-mv100k
 ```
+We have provided the evaluation result of baseline model. Its result can be seen after running the above code, "base pair: ...".
 
 Please refer to `run.sh` for a complete procedure from training to testing.
 

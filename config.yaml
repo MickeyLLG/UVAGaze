@@ -41,6 +41,6 @@ dual:
   eth-mv100k-train:
     image: "data/eth-mv/Image"
     label: "data/eth-mv/Label100k_train"
-  pretrain_gaze360: "pretrain/Iter_20_GA.pt"
-  pretrain_eth-mv-train: "pretrain/Iter_10_GA.pt"
+  pretrain_gaze360: "pretrain/Iter_20_gaze360.pt"
+  pretrain_eth-mv100k-train: "pretrain/Iter_10_eth.pt"
 

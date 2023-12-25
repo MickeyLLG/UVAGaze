@@ -168,11 +168,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Domain Adaptation')
     parser.add_argument('--pairID', type=int, default=0, help="which dual-camera pair to test")
     parser.add_argument('--savepath', type=str, default='test', help="/path/to/the/savedir")
-    parser.add_argument('--target', type=str, default='eth-mv', help="target dataset, eth-mv(100k)")
+    parser.add_argument('--target', type=str, default='eth-mv100k', help="target dataset, eth-mv(100k)")
     parser.add_argument('--source', type=str, default='gaze360', help="source dataset, gaze360 or eth-mv(100k)-train")
     args = parser.parse_args()
 
-    baselog = f'pretrain/{20 if args.source == "gaze360" else 10}.log'
+    basename = f'{20 if args.source == "gaze360" else 10}{"_100k" if "100k" in args.target else ""}'
+    baselog = f'pretrain/{basename}.log'
     print('------\nbase pair', end=': ')
     calc_metric_2cam3d(baselog, cams=18, pairID=args.pairID)
     for i in range(1, 11, 1):
