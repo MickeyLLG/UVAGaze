@@ -55,7 +55,9 @@ Please download the pre-trained models and ETH-MV dataset first. Preparing Gaze3
 - ${DATA_DIR}
     - AAAI24-UVAGaze-pretrain
         - 10.log
+        - 10_100k.log
         - 20.log
+        - 20_100k.log
         - Iter_10_eth.pt
         - Iter_20_gaze360.pt       
     - eth-mv
