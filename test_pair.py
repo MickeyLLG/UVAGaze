@@ -39,7 +39,7 @@ if __name__ == "__main__":
                         help="i represents the i-th folder used as the test set, usually -1 to use all folders")
     parser.add_argument('--savepath', type=str, default=None, help="path to save models")
     parser.add_argument('--gpu', type=int, default=0, help="gpu")
-    parser.add_argument('--target', type=str, default='mpii', help="target dataset, mpii/edp")
+    parser.add_argument('--target', type=str, default='eth-mv100k', help="target dataset, eth-mv(100k)")
     parser.add_argument('--model-name', type=str, default='UVAGaze', help="model name")
     parser.add_argument('--pairID', type=int, default=0, help="number of cams")
     args = parser.parse_args()
