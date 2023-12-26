@@ -92,7 +92,7 @@ We provide two optional arguments, `--stb` and `--pre`. They repersent two diffe
 
 `--i` represents the index of person which is used as the testing set. It is recommended to set it as -1 for using all the person as the training set.
 
-`--pics` represents the number of samples for adaptation.
+`--pic` represents the number of image pairs for adaptation.
 
 We also provide other arguments for adjusting the hyperparameters in our UVAGaze architecture, which could be found in our paper.
 
