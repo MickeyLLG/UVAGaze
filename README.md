@@ -38,7 +38,7 @@ Material related to our paper is available via the following links:
 - Code: https://github.com/MickeyLLG/UVAGaze
 - ETH-MV dataset: https://drive.google.com/file/d/1FSM47wJWNSdMBuooMMnj3iWacL5ebutR/view?usp=sharing
 - Gaze360 dataset: original http://gaze360.csail.mit.edu. We normalize it following [GazeHub@Phi-ai Lab](https://phi-ai.buaa.edu.cn/Gazehub).
-- Pre-trained models and evaluation results: https://drive.google.com/file/d/1mkwKaY97WygAEoNrKEvcyhEP16Qc9Gxq/view?usp=sharing
+- Pre-trained models and their evaluation results: https://drive.google.com/file/d/1mkwKaY97WygAEoNrKEvcyhEP16Qc9Gxq/view?usp=sharing
 
 ## System requirements
 
