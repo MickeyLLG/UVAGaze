@@ -135,6 +135,18 @@ If this work or code is helpful in your research, please cite:
   year={2024}
 }
 ```
+If you are using our ETH-MV dataset, please also cite the original paper of ETH-XGaze:
+
+```latex
+@inproceedings{zhang2020eth,
+  title={Eth-xgaze: A large scale dataset for gaze estimation under extreme head pose and gaze variation},
+  author={Zhang, Xucong and Park, Seonwook and Beeler, Thabo and Bradley, Derek and Tang, Siyu and Hilliges, Otmar},
+  booktitle={Computer Vision--ECCV 2020: 16th European Conference, Glasgow, UK, August 23--28, 2020, Proceedings, Part V 16},
+  pages={365--381},
+  year={2020},
+  organization={Springer}
+}
+```
 
 ## Contact
 
