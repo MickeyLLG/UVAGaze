@@ -86,7 +86,7 @@ ln -s ${DATA_DIR}/Gaze360 data
 
 We provide two optional arguments, `--stb` and `--pre`. They repersent two different network components, which could be found in our paper.
 
-`--source` and `--target` represent the datasets used as the pre-training set and the dataset adapting to. It is recommended to use `gaze360, eth-mv[100k]-train` as `--source` and use `eth-mv[100k]` as `--target`. Please see `config.yaml` for the dataset configuration.
+`--source` and `--target` represent the datasets used as the pre-training set and the dataset adapting to. It is recommended to use `gaze360, eth-mv-train` as `--source` and use `eth-mv` as `--target`. Please see `config.yaml` for the dataset configuration.
 
 `--pairID` represents the index of dual-camera pair to adapt, ranging from 0 to 8.
 
@@ -99,12 +99,12 @@ We also provide other arguments for adjusting the hyperparameters in our UVAGaze
 For example, run code like:
 
 ```bash
-python3 adapt.py --i -1 --cams 18 --pic 256 --bs 32  --pairID 0 --savepath eth2eth --source eth-mv100k-train --target eth-mv100k --gpu 0 --stb --pre
+python3 adapt.py --i -1 --cams 18 --pic 256 --bs 32  --pairID 0 --savepath eth2eth --source eth-mv-train --target eth-mv --gpu 0 --stb --pre
 ```
 
 ### Test
 
-`--i, --savepath, --target, --pairID` are the same as training.
+`--i, --savepath, --target, --pairID` are the same as training. In addition to `eth-mv`, using `eth-mv100k` (a subset of ETH-MV) as `--target` is recommended for a faster testing.
 
 For example, run code like:
 
@@ -114,12 +114,22 @@ python3 test_pair.py --pairID 0 --savepath eth2eth --target eth-mv100k --gpu 0
 
 **Note**: the result printed by `test_pair.py` is **NOT** the final result on the specific dual-camera pair. It contains evaluation results on the **FULL** testing set.
 
-We need to run `calc_metric.py` to get three metrics on the pair we adapt to. These three metrics are the final results, which are described in our paper.
+We need to run `calc_metric.py` to get four metrics on the pair we adapt to. These four metrics are the final results, which are described in our paper.
 
 ```bash
-python3 calc_metric.py --pairID 0 --savepath eth2eth --source eth-mv100k-train --target eth-mv100k
+python3 calc_metric.py --pairID 0 --savepath eth2eth --source eth-mv-train --target eth-mv100k
 ```
-We have provided the evaluation result of baseline model. Its result can be seen after running the above code, "base pair: ...".
+We have provided the evaluation result of baseline model. Its result can be seen after running the above code, "base pair: ...". The result should be like:
+
+```
+base pair: Mono err: xx; Dual-S err: xx; Dual-A err: xx, HP err: xx
+1: ...
+2: ...
+...
+10: ...
+```
+
+The improvements brought by our method can be seen by comparing with the baseline results.
 
 Please refer to `run.sh` for a complete procedure from training to testing.
 
