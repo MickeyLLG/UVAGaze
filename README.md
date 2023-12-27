@@ -34,7 +34,7 @@ Ruicong Liu and Feng Lu<br> <!-- >  https://arxiv.org/abs/  -->
 
 Material related to our paper is available via the following links:
 
-- Paper: https://drive.google.com/file/d/1v3T3NksCPSV9k9H52xCCtDR_a-7VbWb-/view?usp=sharing
+- Paper: http://arxiv.org/abs/2312.15644
 - Code: https://github.com/MickeyLLG/UVAGaze
 - ETH-MV dataset: https://drive.google.com/file/d/1FSM47wJWNSdMBuooMMnj3iWacL5ebutR/view?usp=sharing
 - Gaze360 dataset: original http://gaze360.csail.mit.edu. We normalize it following [GazeHub@Phi-ai Lab](https://phi-ai.buaa.edu.cn/Gazehub).
