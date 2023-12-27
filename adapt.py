@@ -225,7 +225,7 @@ if __name__ == "__main__":
                 cur += 1
 
                 # print logs
-                if i % 5 == 0:
+                if i % 10 == 0:
                     timeend = time.time()
                     resttime = (timeend - timebegin) / cur * (total - cur) / 3600
                     log = f"[{epoch}/{config['params']['epoch']}]: [{i}/{length_target}] " \
