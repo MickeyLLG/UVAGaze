@@ -57,6 +57,7 @@ class AngularLoss():
 
     def __call__(self, gaze, label):
         gaze = gaze / torch.norm(gaze, 2, dim=1).reshape(-1, 1)
+        label = label / torch.norm(label, 2, dim=1).reshape(-1, 1)
         cos = torch.sum(gaze * label, dim=1)
         cos = torch.minimum(cos, 0.999999 * torch.ones_like(cos))
         angular_loss = torch.mean(torch.arccos(cos))

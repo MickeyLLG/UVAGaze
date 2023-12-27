@@ -114,7 +114,7 @@ python3 test_pair.py --pairID 0 --savepath eth2eth --target eth-mv100k --gpu 0
 
 **Note**: the result printed by `test_pair.py` is **NOT** the final result on the specific dual-camera pair. It contains evaluation results on the **FULL** testing set.
 
-We need to run `calc_metric.py` to get four metrics on the pair we adapt to. These four metrics are the final results, which are described in our paper.
+Running `calc_metric.py` is needed to get four metrics on the pair we adapt to. These four metrics are the final results, which are described in our paper.
 
 ```bash
 python3 calc_metric.py --pairID 0 --savepath eth2eth --source eth-mv-train --target eth-mv100k

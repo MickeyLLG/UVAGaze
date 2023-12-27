@@ -35,13 +35,12 @@ dual:
   eth-mv-train:
     image: "data/eth-mv/Image"
     label: "data/eth-mv/Label_train"
-#  # Avoid using eth-mv100k for adaptation.
-#  eth-mv100k:
-#    image: "data/eth-mv/Image"
-#    label: "data/eth-mv/Label100k_test"
-#  eth-mv100k-train:
-#    image: "data/eth-mv/Image"
-#    label: "data/eth-mv/Label100k_train"
+  eth-mv100k:
+    image: "data/eth-mv/Image"
+    label: "data/eth-mv/Label100k_test"
+  eth-mv100k-train:
+    image: "data/eth-mv/Image"
+    label: "data/eth-mv/Label100k_train"
   pretrain_gaze360: "pretrain/Iter_20_gaze360.pt"
   pretrain_eth-mv100k-train: "pretrain/Iter_10_eth.pt"
 
