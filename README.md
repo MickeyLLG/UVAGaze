@@ -160,4 +160,4 @@ If you are using our ETH-MV dataset, please also cite the original paper of ETH-
 
 ## Contact
 
-For any questions, feel free to E-mail me via: `liuruicong(at)buaa.edu.cn`
+For any questions, including algorithms and datasets, feel free to contact me by email: `liuruicong(at)buaa.edu.cn`
