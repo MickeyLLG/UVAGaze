@@ -1,5 +1,6 @@
 UVAGaze: Unsupervised 1-to-2 Views Adaptation for Gaze Estimation
 ---
+[![arXiv](https://img.shields.io/badge/arXiv-2312.15644-DodgerBlue.svg?style=plastic)](http://arxiv.org/abs/2312.15644.pdf)
 ![Python 3.8](https://img.shields.io/badge/python-3.8-DodgerBlue.svg?style=plastic)
 ![Pytorch 1.12.1](https://img.shields.io/badge/pytorch-1.12.1-DodgerBlue.svg?style=plastic)
 ![CUDA 12.1](https://img.shields.io/badge/cuda-12.1-DodgerBlue.svg?style=plastic)
