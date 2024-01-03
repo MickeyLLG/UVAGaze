@@ -21,6 +21,8 @@ class GazeStatic(nn.Module):
         # self.tanh = nn.Tanh()
 
     def forward(self, x_in):
+        # gaze_output: 3D vector of gaze direction.
+        # head_output: euler angles of head pose - yaw, pitch, roll.
         base_out, _, _ = self.base_model(x_in)
         embedding = torch.flatten(base_out, start_dim=1)
         output = self.last_layer(embedding)
