@@ -142,7 +142,10 @@ If this work or code is helpful in your research, please cite:
 @inproceedings{liu2024uvagaze,
   title={UVAGaze: Unsupervised 1-to-2 Views Adaptation for Gaze Estimation},
   author={Liu, Ruicong and Lu, Feng},
-  booktitle={Proceedings of the AAAI conference on artificial intelligence},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={4},
+  pages={3693--3701},
   year={2024}
 }
 ```
